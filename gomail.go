@@ -7,7 +7,7 @@ import (
 
 func Send(email string, password string, to []string, subject string, content string) (err error) {
 	if len(to) < 1 {
-		errors.New("No recipient specified")
+		err = errors.New("No recipient specified")
 		return
 	}
 	hostname := "smtp.gmail.com"
